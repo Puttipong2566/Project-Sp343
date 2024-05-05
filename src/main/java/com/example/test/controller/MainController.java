@@ -1,5 +1,7 @@
-package com.example.test;
+package com.example.test.controller;
 
+import com.example.test.model.Activity;
+import com.example.test.repository.ActivityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +11,7 @@ import java.util.List;
 @RestController
 public class MainController {
     @Autowired
-    private   ActivityRepository activityRepository;
+    private ActivityRepository activityRepository;
     @GetMapping("/AllActivity")
     String getAllActivity(Model model) {
     List<Activity> activityRepositoryAll = activityRepository.findAll();
