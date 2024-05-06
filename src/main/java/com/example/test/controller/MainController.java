@@ -30,6 +30,4 @@ public class MainController {
         return activityRepository.findAll();
     }
 
-
-
 }

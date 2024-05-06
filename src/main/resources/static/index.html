@@ -140,12 +140,12 @@
                     </svg>
                     <div class="card-body">
                         <!-- แสดงข้อมูลของแต่ละรายการ -->
-                        <p class="card-text" th:text="${activity.description}">ActivityDescription.</p>
+                        <p class="card-text" th:text="${activityRepositoryAll.description}">ActivityDescription.</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-secondary">Join</button>
                             </div>
-                            <small class="text-body-secondary" th:text="${activity.date}">Date</small>
+                            <small class="text-body-secondary" th:text="${activityRepositoryAll.date}">Date</small>
                         </div>
                     </div>
                 </div>
@@ -155,4 +155,4 @@
     </section>
 </div>
 </body>
-</html>
+ </html>
