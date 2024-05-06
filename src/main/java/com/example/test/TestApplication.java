@@ -23,17 +23,8 @@ public class TestApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        ShowAllActivity();
-        ShowAllStudents();
+
     }
 
-    public void ShowAllActivity() {
-        List<Activity> activityList = activityRepository.findAll();
-        System.out.println("Total activities: " + activityList.size());
     }
 
-    public void ShowAllStudents() {
-        List<Students> studentList = studentRepository.findAll();
-        System.out.println("Total students: " + studentList.size());
-    }
-}

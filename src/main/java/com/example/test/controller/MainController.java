@@ -3,12 +3,18 @@ package com.example.test.controller;
 import com.example.test.model.Activity;
 import com.example.test.repository.ActivityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-@RestController
+@Controller
+@RequestMapping("/Test")
+
+
+
 public class MainController {
     @Autowired
     private ActivityRepository activityRepository;
@@ -16,6 +22,14 @@ public class MainController {
     String getAllActivity(Model model) {
     List<Activity> activityRepositoryAll = activityRepository.findAll();
     model.addAttribute("all_activity",activityRepositoryAll);
-    return "AllActivity";
+    return "index";
     }
+
+    @GetMapping("/")
+    public List <Activity > Tesst(){
+        return activityRepository.findAll();
+    }
+
+
+
 }
