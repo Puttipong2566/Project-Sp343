@@ -34,6 +34,7 @@
         </div>
         <div class="container">
 
+            <!--
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
                     <div class="card shadow-sm">
@@ -126,6 +127,31 @@
                 </div>
             </div>
         </div>
+        -->
+
+        <div class="row">
+            <!-- วนลูปผ่านข้อมูลทั้งหมด -->
+            <div th:each="activity : ${activityList}" class="col">
+                <div class="card shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#55595c"></rect>
+                        <text x="50%" y="50%" fill="#eceeef" dy=".3em">image</text>
+                    </svg>
+                    <div class="card-body">
+                        <!-- แสดงข้อมูลของแต่ละรายการ -->
+                        <p class="card-text" th:text="${activity.description}">ActivityDescription.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Join</button>
+                            </div>
+                            <small class="text-body-secondary" th:text="${activity.date}">Date</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 </div>
 </body>
