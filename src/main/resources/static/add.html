@@ -31,29 +31,29 @@
     <form action="#" th:action="@{/addproduct}" th:object="${products}" method="post">
         <div class="mb-3 mt-3">
             <label for="title" class="form-label">Name:</label>
-            <input type="text" th:field="*{title}" class="form-control" id="title" name="title"/>
+            <input type="text" th:field="*{ActivityName}" class="form-control" id="title" name="title"/>
         </div>
         <div class="mb-3 mt-3">
             <form enctype="multipart/form-data" method="post" action="/upload" class="mb-3 mt-3">
                 <label for="image" class="form-label">Image:</label>
-                <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                <input type="file" th:field="*{Image}" class="form-control" id="image" name="image" accept="image/*">
             </form>
         </div>
         <div class="mb-3 mt-3">
             <label for="title" class="form-label">Description:</label>
-            <input type="text" th:field="*{description}" class="form-control" id="description" name="description"/>
+            <input type="text" th:field="*{ActivityDescription}" class="form-control" id="description" name="description"/>
         </div>
         <div class="mb-3 mt-3">
             <label for="title" class="form-label">Location:</label>
-            <input type="text" th:field="*{filename}" class="form-control" id="filename" name="filename"/>
+            <input type="text" th:field="*{Location}" class="form-control" id="filename" name="filename"/>
         </div>
         <div class="mb-3 mt-3">
             <label for="title" class="form-label">Date:</label>
-            <input type="text" th:field="*{height}" class="form-control" id="height" name="height"/>
+            <input type="text" th:field="*{Date}" class="form-control" id="height" name="height"/>
         </div>
         <div class="mb-3 mt-3">
             <label for="title" class="form-label">Time:</label>
-            <input type="text" th:field="*{width}" class="form-control" id="width" name="width"/>
+            <input type="text" th:field="*{Time}" class="form-control" id="width" name="width"/>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form><br><br>
