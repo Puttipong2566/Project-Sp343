@@ -11,17 +11,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 @Controller
-@RequestMapping("/Test")
+@RequestMapping("/assets")
 
 
 
 public class MainController {
     @Autowired
     private ActivityRepository activityRepository;
-    @GetMapping("/AllActivity")
+
+    @GetMapping({"/activity"})
     String getAllActivity(Model model) {
-    List<Activity> activityRepositoryAll = activityRepository.findAll();
-    model.addAttribute("all_activity",activityRepositoryAll);
+    List<Activity> activity = activityRepository.findAll();
+    model.addAttribute("activity",activity);
     return "index";
     }
 
